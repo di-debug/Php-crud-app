@@ -56,7 +56,7 @@ foreach($tabs as $tab) {
             <div class="mid-align">
               <h6 class="bg-gray text-center br-sm inline"><?php echo strtoupper(htmlspecialchars($slide['title'])); ?></h4>
               <h4 class=" text-center"><?php echo nl2br(htmlspecialchars($slide['description'])); ?></h4>
-              <div class="mid-align"><button>Learn More</button> <i class="bi bi-arrow-right"></i></div>
+              <div class="flex"><button>Learn More</button><img class="btn-icon" src="./uploads/arrow-right.svg" alt="icon"> </div>
             </div>
           <?php endforeach; ?>
         </div>

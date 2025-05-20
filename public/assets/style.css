@@ -189,6 +189,18 @@ button {
   border-radius: 2px;
 }
 
+.flex{
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-icon{
+  color: #fff;
+}
+
+
 .slick-arrow {
   display: none !important;
 }
@@ -253,5 +265,8 @@ button {
 @media (max-width: 600px) {
   .container { padding: 0 5px; }
   .main-content { min-height: 0; }
-  .slider-section { padding: 20px 10px; }
+  .slider-section { 
+    width: 100%;
+    border-radius: 0;
+    padding: 20px 10px; }
 }
