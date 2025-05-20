@@ -80,6 +80,7 @@ button {
 .sidebar .tab-btn {
   background: #fff;
   border: none;
+  border-radius: 4px;
   color: #11324d;
   font-size: 20px;
   font-family: 'Titillium Web', sans-serif;
