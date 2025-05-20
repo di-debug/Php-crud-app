@@ -86,7 +86,7 @@ button {
   color: #11324d;
   font-size: 20px;
   font-family: 'Titillium Web', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   text-align: left;
   padding: 24px 32px;
   margin-bottom: 20px;
@@ -184,24 +184,32 @@ button {
 }
 
 .slick-dots{
-  margin-top: 100px;
+  margin-top: 50px;
   display: flex !important;
   flex-direction: row !important;
   justify-content: center;
   align-items: center;
   gap: 10px; 
-}
+} 
 
 .slick-dots li {
+  z-index: 9999;
   width: 10px;
   height: 10px;
-  background: #fff;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid #fff;
 }
 
+.slick-dots .slick-active button{
+  background: #fff;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  outline: none;
+}
 .image-section {
   background: #fff;
   display: flex;

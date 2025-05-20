@@ -3,10 +3,10 @@ $(function(){
     var selector = '.slider-' + tabId;
     if(!$(selector).hasClass('slick-initialized')) {
       $(selector).slick({
-        arrows: false,
-        dots: false,
+        arrows: true,
+        dots: true,
         infinite: false,
-        adaptiveHeight: true,
+        adaptiveHeight: false,
       }).on('afterChange', function(event, slick, currentSlide){
         var img = slidesData[tabId][currentSlide];
         $('#imageDisplay').css('background-image', 'url(' + img + ')');

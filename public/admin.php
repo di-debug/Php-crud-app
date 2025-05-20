@@ -42,6 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $crudController->createSlide($slideTitle, $slideDescription, $relativePath, $tabId);
             }
         }
+    } elseif (isset($_POST['delete_tab']) && !empty($_POST['delete_tab_id'])) {
+        $tabId = intval($_POST['delete_tab_id']);
+        $crudController->deleteTab($tabId);
     }
 }
 
@@ -107,6 +110,18 @@ $slides = $crudController->getAllSlides();
       </form>
     </div>
   </div>
+
+  <hr>
+  <h4>Existing Tabs</h4>
+  <?php foreach($tabs as $tab): ?>
+  <div class="d-flex align-items-center mb-2">
+    <span><?php echo htmlspecialchars($tab['name']); ?></span>
+    <form method="post" action="" style="display:inline;" onsubmit="return confirm('Delete this tab?');">
+      <input type="hidden" name="delete_tab_id" value="<?php echo $tab['id']; ?>">
+      <button type="submit" name="delete_tab" class="btn btn-danger btn-sm ms-2">Delete</button>
+    </form>
+  </div>
+  <?php endforeach; ?>
 
   <hr>
   <a href="index.php" class="btn btn-secondary">Back to Frontend</a>
