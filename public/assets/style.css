@@ -276,5 +276,24 @@ button {
     width: 100%;
     border-radius: 0;
     padding: 20px 10px; 
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    position: relative;
+  }
+   .image-section {
+    display: none !important;
+  }
+  .slider-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(22, 92, 130, 0.55); /* Adjust color and opacity as needed */
+    z-index: 1;
+    pointer-events: none;
+  }
+  .slider-section > * {
+    position: relative;
+    z-index: 2;
   }
 }

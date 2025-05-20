@@ -10,10 +10,30 @@ $(function(){
       }).on('afterChange', function(event, slick, currentSlide){
         var img = slidesData[tabId][currentSlide];
         $('#imageDisplay').css('background-image', 'url(' + img + ')');
+        setSliderSectionBg(img);
       });
     }
     $('#imageDisplay').css('background-image', 'url(' + slidesData[tabId][0] + ')');
+    setSliderSectionBg(slidesData[tabId][0]);
   }
+
+  function setSliderSectionBg(imgUrl) {
+    const sliderSection = document.querySelector('.slider-section');
+    if (window.innerWidth <= 900) {
+      sliderSection.style.backgroundImage = imgUrl ? `url('${imgUrl}')` : '';
+    } else {
+      sliderSection.style.backgroundImage = '';
+    }
+  }
+
+  // Example: Call this function whenever the slide changes
+  // setSliderSectionBg(currentImageUrl);
+
+  // Also update on resize
+  window.addEventListener('resize', function() {
+    // Call with the current image URL
+    setSliderSectionBg(currentImageUrl);
+  });
 
   // Init first tab
   if (firstTabId) {
