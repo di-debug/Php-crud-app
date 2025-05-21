@@ -1,6 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  background: #11324d;
+  background: #11334d;
   color: #fff;
   margin: 0;
   padding: 0;
@@ -50,11 +50,12 @@ button {
 }
 .header-section h1 {
   font-size: 40px;
+  font-weight: 400;
   margin-bottom: 10px;
 }
 .header-section p {
-  color: #fff;
-  font-size: 18px;
+  color: #5799ab;
+  font-size: 15px;
   margin-bottom: 0;
 }
 .main-content {
@@ -67,7 +68,7 @@ button {
 .sidebar {
   background: #f7f7f6;
   color: #11324d;
-  /* width: 33%; */
+  width: 27%;
   min-width: 260px;
   padding: 40px 0;
   display: flex;
@@ -80,10 +81,10 @@ button {
 .sidebar .tab-btn {
   background: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 3px;
   color: #11324d;
   font-size: 20px;
-  font-family: 'Titillium Web', sans-serif;
+  /* font-family: 'Titillium Web', sans-serif; */
   font-weight: 400;
   text-align: left;
   padding: 15px 10px;
@@ -100,9 +101,9 @@ button {
 .sidebar .tab-btn.active,
 .sidebar .tab-btn:focus {
   font-weight: 400;
-  background: #f6f6f6;
+  background: #fff;
   color: #2e3439;
-  box-shadow: 0 4px 16px #d4d3d8;
+  box-shadow: 0px 3px 4px #d4d3d8;
 }
 .sidebar .tab-btn .tab-icon {
   width: 36px;
@@ -119,9 +120,9 @@ button {
   transform: scaleX(-1);
   width: 0;
   height: 0;
-  border-top: 18px solid transparent;
-  border-bottom: 18px solid transparent;
-  border-left: 16px solid #64b4c8; 
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid #64b4c8; 
   z-index: 2;
 }
 
@@ -131,9 +132,9 @@ button {
   padding: 60px 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   /* min-width: 0; */
-  width: 33%;
+  width: 40%;
 }
 .slider-section .slider {
   background: none;
@@ -177,8 +178,15 @@ button {
 
 }
 
+.mid-align h4{
+  font-size: 28px;
+  font-weight: 400;
+}
+
+
 .bg-gray{
-  background-color: #696969;
+  font-size: 12px;
+  background-color: #5799ab;
 }
 
 .text-center{
@@ -211,16 +219,28 @@ button {
 }
 
 .slick-dots{
-  margin-top: 50px;
+  /* margin-top: 50px; */
   display: flex !important;
   flex-direction: row !important;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   gap: 10px; 
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  bottom: -50px;
+  transform: translate(-50%,50%) !important;
 } 
 
+.height-300{
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .slick-dots li {
-  z-index: 9999;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -228,16 +248,20 @@ button {
   justify-content: center;
   align-items: center;
   border: 1px solid #fff;
+  outline: none;
+  border-image:none ;
 }
 
 .slick-dots .slick-active button{
-  background: #fff;
+  background: #d4d3d8;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   outline: none;
+  border: none !important;
 }
 .image-section {
+  width: 33%;
   background: #fff;
   display: flex;
   align-items: center;
@@ -245,8 +269,9 @@ button {
   overflow: hidden;
 }
 #imageDisplay {
-  width: 400px;
-  height: 440px;
+  aspect-ratio: 1/1;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   border: 1px solid #d4d3d8;
@@ -275,6 +300,7 @@ button {
   .slider-section { 
     justify-content: center;
     width: 100%;
+    aspect-ratio: 3/2;
     border-radius: 0;
     padding: 20px 10px; 
     background-size: cover !important;
@@ -297,4 +323,8 @@ button {
     position: relative;
     z-index: 2;
   }
+
+  .slick-dots{
+  bottom: -50px;
+} 
 }

@@ -53,10 +53,10 @@ foreach($tabs as $tab) {
       <?php foreach($tabs as $index => $tab): ?>
         <div class="slider slider-<?php echo $tab['id']; ?>" style="<?php if($index!=0) echo 'display:none;'; ?>">
           <?php foreach($slides_by_tab[$tab['id']] as $slide): ?>
-            <div class="mid-align">
+            <div class="mid-align height-300">
               <h6 class="bg-gray text-center br-sm inline"><?php echo strtoupper(htmlspecialchars($slide['title'])); ?></h4>
               <h4 class=" text-center"><?php echo nl2br(htmlspecialchars($slide['description'])); ?></h4>
-              <div class="flex"><button>Learn More</button><img class="btn-icon" src="./uploads/arrow-right.svg" alt="icon"> </div>
+              <div class="flex"><button>Learn More</button><img class="btn-icon" src="./assets/right-arrow.svg" alt="icon" width="15px" height="15px"> </div>
             </div>
           <?php endforeach; ?>
         </div>
