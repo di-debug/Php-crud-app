@@ -290,12 +290,14 @@ button {
   .sidebar, .slider-section, .image-section { display: none !important; }
   .accordion-section { display: block !important; }
   .accordion-panel {
+
     position: relative;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
     min-height: 220px;
     padding: 0;
+    margin: 20px 2px;
     overflow: hidden;
   }
   .accordion-overlay {
@@ -363,6 +365,24 @@ button {
   .accordion-slide-index {
     display: none !important;
   }
+  .accordion-btn.active::after {
+  content: "";
+  position: absolute;
+  left: 45%;
+  bottom: -21px; 
+  transform: scaley(-1) !important;
+  transform: translatex(-50%);
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 12px solid #64b4c8; /* Arrow color */
+  z-index: 3;
+}
+.accordion-btn {
+  position: relative; /* Ensure positioning context for ::after */
+}
+  
 }
 @media (min-width: 901px) {
   .accordion-section { display: none !important; }
