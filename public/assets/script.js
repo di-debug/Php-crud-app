@@ -78,4 +78,22 @@ $(function(){
       initSlider(tabId);
     }
   });
+
+  $(document).on('click', '.accordion-btn', function() {
+    if (window.innerWidth > 900) return;
+    var $btn = $(this);
+    var $panel = $btn.next('.accordion-panel');
+    if ($btn.hasClass('active')) {
+      $btn.removeClass('active');
+      $panel.slideUp();
+      $btn.find('.accordion-icon').attr('src', './assets/plus-01.svg');
+    } else {
+      $('.accordion-btn').removeClass('active')
+        .find('.accordion-icon').attr('src', './assets/plus-01.svg');
+      $('.accordion-panel').slideUp();
+      $btn.addClass('active');
+      $panel.slideDown();
+      $btn.find('.accordion-icon').attr('src', './assets/minus-01.svg');
+    }
+  });
 });
