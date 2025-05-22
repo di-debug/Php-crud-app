@@ -96,4 +96,44 @@ $(function(){
       $btn.find('.accordion-icon').attr('src', './assets/minus-01.svg');
     }
   });
+
+  $(document).on('click', '.accordion-next, .accordion-prev', function() {
+    var tabId = $(this).data('tab');
+    var $panel = $('.accordion-panel[data-tab="' + tabId + '"]');
+    var $slides = $panel.find('.accordion-slide');
+    var $dots = $panel.find('.accordion-dot');
+    var current = $slides.filter(':visible').index();
+    var total = $slides.length;
+    var next;
+
+    if ($(this).hasClass('accordion-next')) {
+      next = (current + 1) % total;
+    } else {
+      next = (current - 1 + total) % total;
+    }
+
+    $slides.hide().eq(next).show();
+    $dots.removeClass('active').eq(next).addClass('active');
+
+    // Update background image
+    var img = slidesData[tabId][next];
+    $panel.css('background-image', img ? "url('" + img + "')" : '');
+  });
+
+  $(document).on('click', '.accordion-dot', function() {
+    var $dot = $(this);
+    var tabId = $dot.closest('.accordion-dots').data('tab');
+    var index = $dot.data('index');
+    var $panel = $('.accordion-panel[data-tab="' + tabId + '"]');
+    var $slides = $panel.find('.accordion-slide');
+    var $dots = $panel.find('.accordion-dot');
+
+    $slides.hide().eq(index).show();
+    $dots.removeClass('active');
+    $dot.addClass('active');
+
+    // Update background image
+    var img = slidesData[tabId][index];
+    $panel.css('background-image', img ? "url('" + img + "')" : '');
+  });
 });
