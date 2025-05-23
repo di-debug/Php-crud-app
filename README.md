@@ -42,7 +42,7 @@ php-crud-app
 
 2. **Database Setup**
    - Create a MySQL database for the application.
-   - Import the `schema.sql` file located in the `database` directory to create the necessary tables.
+   - Import the `Database.sql` file located in the `database` directory to create the necessary tables.
 
 3. **Configuration**
    - Update the `src/config.php` file with your database connection settings.
